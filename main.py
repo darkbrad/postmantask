@@ -15,13 +15,12 @@ def register():
     new_data=request.json
     with open("data.json","r")as file:
         data=json.load(file)
-        for i in data:
-            if i!=new_data:
-                data.append(new_data)
+        if new_data["name"] not in [i["name"] for i in data]:
+            data.append(new_data)
+            with open("data.json","w") as file:
+                    json.dump(data,file,indent=4)
+            return "Account has been created"
     return "choose another username"
-    with open("data.json","w") as file:
-        json.dump(data,file,indent=4)
-    return "Done"
 @app.route("/",methods=["VIEW"])
 def verification():
     data_to_verify=request.json

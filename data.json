@@ -16,7 +16,15 @@
         "password": "123334"
     },
     {
-        "name": "Igor",
+        "name": "Sergey",
         "password": "1257"
+    },
+    {
+        "name": "Nikolas",
+        "password": "2278"
+    },
+    {
+        "name": "Nick",
+        "password": "3"
     }
 ]
